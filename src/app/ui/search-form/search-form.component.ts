@@ -14,8 +14,8 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchForm = new FormGroup({
-      personName: new FormControl(null, this.forbiddenNames.bind(this)),
-      personRoll: new FormControl(null)
+      personName: new FormControl(null, Validators.required),
+      personRoll: new FormControl(null, Validators.required)
     });
   }
 
@@ -23,10 +23,4 @@ export class SearchFormComponent implements OnInit {
     this.submitSearch.emit(this.searchForm);
   }
 
-  forbiddenNames() {
-    if(this.searchForm.value.personName.includes('ä') || this.searchForm.value.personName.includes('ö') || this.searchForm.value.personName.includes('ü')) {
-      return true;
-    }
-    return null;
-  }
 }
