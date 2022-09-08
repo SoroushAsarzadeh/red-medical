@@ -6,7 +6,7 @@
         <input matInput formControlName="personName">
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Roll</mat-label>
+        <mat-label>Role</mat-label>
         <mat-select formControlName="personRoll" multiple>
             <mat-option *ngFor="let roll of rolls" [value]="roll">{{roll}}</mat-option>
         </mat-select>

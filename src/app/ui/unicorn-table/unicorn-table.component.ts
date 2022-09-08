@@ -80,7 +80,7 @@ export class UnicornTableComponent implements OnInit, OnChanges {
       );
     }
     if (this.searchFilters.value.personRoll) {
-      this.filteredData = this.dataSource.data.filter(el => this.searchFilters.value.personRoll.includes(el.resourceType));
+      this.filteredData = this.filteredData.filter(el => this.searchFilters.value.personRoll.includes(el.resourceType));
     }
   }
 }
