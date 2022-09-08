@@ -1,0 +1,32 @@
+.title {
+    text-align: center;
+    padding: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // border: 1px solid gray;
+    overflow: hidden;
+    &__item {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        &--title {
+            flex: 1;
+            background-color: goldenrod;
+            padding: 10px;
+        }
+        &--value {
+            flex: 1;
+            background-color: lightgray;
+            padding: 10px;
+
+        }
+    }
+}

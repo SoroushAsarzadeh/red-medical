@@ -4,9 +4,15 @@
       <mat-spinner *ngIf="isLoading"></mat-spinner>
     </div>
 
-    <table
+    <!-- <table
       *ngIf="dataSource && dataSource.data && dataSource.data.length > 0; else noData"
       [dataSource]="dataSource"
+      class="table"
+      mat-table
+    > -->
+    <table
+      *ngIf="filteredData && filteredData.length > 0; else noData"
+      [dataSource]="filteredData"
       class="table"
       mat-table
     >
@@ -43,7 +49,7 @@
       </ng-container>
 
       <tr *matHeaderRowDef="columns" mat-header-row></tr>
-      <tr *matRowDef="let row; columns: columns" class="ripple" mat-row></tr>
+      <tr *matRowDef="let row; columns: columns" class="ripple" mat-row (click)="openDialog(row)"></tr>
     </table>
   </div>
   <mat-paginator [length]="totalLength" [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>

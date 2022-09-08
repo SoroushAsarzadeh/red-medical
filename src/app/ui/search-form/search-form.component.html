@@ -1,1 +1,15 @@
 <!-- implement search form here -->
+
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="personName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Roll</mat-label>
+        <mat-select formControlName="personRoll" multiple>
+            <mat-option *ngFor="let roll of rolls" [value]="roll">{{roll}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button>Search</button>
+</form>

@@ -1,12 +1,13 @@
 <app-grid-container>
   <div class="content" content>
-    <app-search></app-search>
+    <app-search (submitSearch)="transmitFilter($event)"></app-search>
 
     <app-unicorn-table
       [columns]="columns"
       [entries]="entries$ | async"
       [isLoading]="isLoading"
       [totalLength]="totalLength$ | async"
+      [searchFilters]="searchFilters"
     ></app-unicorn-table>
   </div>
 </app-grid-container>
