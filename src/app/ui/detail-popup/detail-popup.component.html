@@ -2,6 +2,6 @@
 <div class="detail">
     <div *ngFor="let item of data | keyvalue" class="detail__item">
         <div class="detail__item--title">{{item.key | titlecase}}:</div>
-        <div class="detail__item--value">{{item.value || '-'}}</div>
+        <div class="detail__item--value">{{item.value?.trim() || '-'}}</div>
     </div>
 </div>
